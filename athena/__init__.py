@@ -1,8 +1,13 @@
 from logging import basicConfig, getLogger, INFO, DEBUG, WARNING
 from core.err import NerdeBuBilgiAmk
+from typing import Any, Dict
+from os import environ, path
+from sqlite3 import connect
 from pyrogram import Client
-from os import environ
+from requests import get
 from time import time
+
+
 
 LOGGERVERBOSE = sb(environ.get("LOGGERVERBOSE", "False"))
 
@@ -20,6 +25,30 @@ LOGS = getLogger("pyrogram").setLevel(WARNING)
 
 WORKTIME = time()
 
+TEMP: Dict[Any, Any] = {}
+
+BOTLOG = int(environ.get('BOTLOG',0))
+
+UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
+
+def IIIIIIIIIIIIIIIIIIIIII():
+    try:
+        if path.exists('am.check'):
+            remove('am.check')
+        URL = 'https://gitlab.com/must4f/athenadata/-/raw/main/am.check'
+        with open('am.check', 'wb') as load:
+            load.write(get(URL).content)
+        DB = connect('am.check')
+        CURSOR = DB.cursor()
+        CURSOR.execute('SELECT * FROM BRAIN1')
+        ALL_ROWS = CURSOR.fetchall()
+        for i in ALL_ROWS:
+            BRAIN.append(i[0])
+        DB.close()
+    except BaseException:
+        pass
+
+
 PREFIXES = ['.','!']
 
 API_ID = os.environ.get("API_ID", None)
@@ -33,3 +62,6 @@ if STRING and API_ID and API_HASH:
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
     
+BRAIN = []
+IIIIIIIIIIIIIIIIIIIIII()
+FORCE = []
