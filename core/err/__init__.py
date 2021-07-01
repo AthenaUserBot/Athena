@@ -1,0 +1,2 @@
+class NerdeBuBilgiAmk(Exception):
+    pass
