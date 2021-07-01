@@ -13,7 +13,7 @@ from traceback import format_exc
 
 from pyrogram import ContinuePropagation, StopPropagation, filters
 from pyrogram.handlers import MessageHandler
-from athena import BRAIN, TEMP, PREFIX, BOTLOG, PREFIXES, bot as app
+from athena import BRAIN, TEMP, BOTLOG, PREFIXES, bot as app
 
 
 
@@ -30,8 +30,8 @@ def muinrobot(**args):
     bot = args.get('bot', True)
     service = args.get('service', False) 
 
-    if pattern and '.' in pattern[:2]:
-        args['pattern'] = pattern = pattern.replace('.', PREFIX)
+#    if pattern and '.' in pattern[:2]:
+#        args['pattern'] = pattern = pattern.replace('.', PREFIX)
 
     if pattern and pattern[-1:] != '$':
         args['pattern'] = pattern = f'{pattern}(?: |$)'
