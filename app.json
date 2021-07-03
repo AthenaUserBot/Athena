@@ -1,0 +1,121 @@
+{
+  "name": "Athena UserBot",
+  "description": "Pyrogram based modern telegram userbot.",
+  "logo": "https://telegra.ph/file/0c04a0aa0d08967199e30.jpg",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "Athena",
+    "pyrogram",
+    "modular"
+  ],
+  "repository": "https://github.com/Athenauserbot/AthenaUserbot",
+  "success_url": "https://t.me/AthenaSupport",
+  "stack": "container",
+  "env": {
+    "APIKEY": {
+      "description": "Bu değeri my.telegram.org adresinden alın.",
+      "required": true
+    },
+    "APIHASH": {
+      "description": "Bu değeri my.telegram.org adresinden alın.",
+      "required": true
+    },
+    "STRING": {
+      "description": "python3 GenerateString.py dosyasını yerel olarak çalıştırarak bu değeri alın.",
+      "required": true
+    },
+    "HEROKU": {
+      "description": "UserBot bir Heroku Dyno üzerinde çalışıyorsa, bu değer True olmalıdır.",
+      "value": "True",
+      "required": true
+    },
+    "HEROKUAPIKEY": {
+      "description": "Heroku API Key, 'https://dashboard.heroku.com/account' adresinden alın.",
+      "value": ""
+    },
+    "HEROKUAPP": {
+      "description": "Heroku uygulama adını buraya ekleyin. UserBot güncellemelerine yardımcı olur.",
+      "required": true
+    },
+    "UPSTREAMREPO": {
+      "description": "Fork sağlamanız durumunda repo URL'nizi buraya ekleyin. Varsayılan olarak kendi repo adresimiz eklidir.",
+      "value": "https://github.com/Athenauserbot/AsenaUserBot",
+      "required": true
+    },
+    "COUNTRY": {
+      "description": "Ülkenizi .time ve .date komutlarında kullanılacak şekilde ayarlayın. Varsayılan olarak Türkiye ayarlanmıştır.",
+      "value": "Turkey",
+      "required": false
+    },
+    "TZ_NUMBER": {
+      "description": "Ülkenizde birden fazla Saat Dilimi olması durumunda bu değeri değiştirin.",
+      "value": "1",
+      "required": false
+    },
+    "TZ": {
+      "description": "Bunun ne işe yaradığı hakkında fikrin yoksa kurcalama :)",
+      "value": "Europe/Istanbul",
+      "required": true  
+    },
+    "CHROME_DRIVER": {
+      "description": "bazı modüller için ChromeDriver konumu.",
+      "value": "/usr/bin/chromedriver",
+      "required": false
+    },
+    "GOOGLE_CHROME_BIN": {
+      "description": "bazı modüller için Google Chrome (veya) Chromium binary konumu.",
+      "value": "/usr/bin/chromium-browser",
+      "required": false
+    },
+    "BOT_USERNAME": {
+      "description": "Inline bot özelliğinin çalışması için gereklidir. Buraya botunuzun kullanıcı adınız yazmanız lazım. Botunuz yok ise @BotFather yardımı ile bot oluşturabilirsiniz.",
+      "required": false  
+    },
+    "BOT_TOKEN": {
+      "description": "Inline bot özelliğinin çalışması için gereklidir. Buraya botunuzun tokenini yazmanız lazım. Botunuz yok ise @BotFather yardımı ile bot oluşturabilirsiniz.",
+      "required": false    
+    },
+    "BOTLOG": {
+      "description": "Günlük grubunun ChatID'si. İstemiyorsanız '0' olarak ayarlayın.",
+      "value": "0"
+    },
+    "LOGGERVERBOSE": {
+      "description": "Konsol günlüğünde ayrıntıya ihtiyacınız varsa, bunu True olarak ayarlayın.",
+      "value": "False"
+    },
+    "PM__BAN": {
+      "description": "PM Otomatik Yasaklama Özelliği. 'Hey! Bu bir bot.' modülüdür.",
+      "value": "False"
+    },
+    "PM__BAN__LIMIT": {
+      "description": "PM Auto Ban limiti. Size kullanıcı x mesaj atarsa engellencek.",
+      "value": "4",
+      "required": false
+    },
+    "TMP_DOWNLOAD_DIRECTORY": {
+      "description": "Birçok modül için indirme konumu (GDrive, .download vb..)",
+      "value": "./downloads/"
+    },
+    "DEFAULTBIO": {
+      "description": "Varsayılan profil biyografisi.",
+      "value": "💍 @AthenaUserBot",
+      "required": false
+    },
+    "LANGUAGE": {
+      "description": "Botun dili",
+      "value": "tr",
+      "required": true
+    }
+  },
+  "addons": [{
+    "plan": "heroku-postgresql"
+  }],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  },{
+    "url": "heroku-community/apt"
+    }]
+}
