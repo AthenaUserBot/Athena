@@ -1,12 +1,11 @@
-from logging import basicConfig, getLogger, INFO, DEBUG, WARNING
 from core.err import NerdeBuBilgiAmk
 from typing import Any, Dict
 from os import environ, path
 from sqlite3 import connect
 from pyrogram import Client
 from requests import get
+from core.logd import *
 from time import time
-
 
 
 LOGGERVERBOSE = sb(environ.get("LOGGERVERBOSE", "False"))
@@ -21,7 +20,6 @@ else:
         level=INFO,
         format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
         datefmt='%d-%b-%y %H:%M:%S')
-LOGS = getLogger("pyrogram").setLevel(WARNING)
 
 WORKTIME = time()
 
@@ -30,6 +28,8 @@ TEMP: Dict[Any, Any] = {}
 BOTLOG = int(environ.get('BOTLOG',0))
 
 UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
+
+disablelog() # bye 
 
 def IIIIIIIIIIIIIIIIIIIIII():
     try:
