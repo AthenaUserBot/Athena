@@ -57,8 +57,14 @@ API_HASH = os.environ.get("API_HASH", None)
 
 STRING = os.environ.get("STRING", None)
 
-if STRING and API_ID and API_HASH:
-    bot = Client(STRING, api_id=API_ID, api_hash=API_HASH)
+if API_ID and API_HASH:
+    bot = Client(STRING if STRING else 'athena',
+        api_id=API_ID,
+        api_hash=API_HASH,
+        plugins=dict(
+            root="athena.plugins",
+            sleep_threshold=180
+    ))
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
     
