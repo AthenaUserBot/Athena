@@ -12,6 +12,7 @@ from time import gmtime, strftime
 from traceback import format_exc
 
 from pyrogram import ContinuePropagation, StopPropagation, filters
+from pyrogram.errors import MessageNotModified
 from pyrogram.handlers import MessageHandler
 from athena import BRAIN, TEMP, BOTLOG, PREFIXES, bot as app
 
@@ -62,6 +63,8 @@ def muinrobot(**args):
                     func(message)
             except (ContinuePropagation, StopPropagation) as c:
                 raise c
+            except MessageNotModified:
+                return
             except Exception as e:
                 try:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
