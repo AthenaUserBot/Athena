@@ -1,0 +1,10 @@
+beautifulsoup4
+dnspython
+git+https://github.com/code-rgb/google-images-download.git
+heroku3
+telegraph
+tgcrypto
+requests
+python-dotenv
+pytz
+pyrogram
