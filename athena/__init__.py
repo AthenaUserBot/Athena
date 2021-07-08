@@ -67,7 +67,11 @@ if API_ID and API_HASH:
     ))
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
-    
+   
+
+
 BRAIN = []
 IIIIIIIIIIIIIIIIIIIIII()
 FORCE = []
+AFKMOD = False
+
