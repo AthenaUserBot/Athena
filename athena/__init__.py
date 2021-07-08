@@ -23,6 +23,8 @@ else:
 
 WORKTIME = time()
 
+ATHENAVER = 'v0.1'
+
 TEMP: Dict[Any, Any] = {}
 
 BOTLOG = int(environ.get('BOTLOG',0))
@@ -58,12 +60,14 @@ API_HASH = os.environ.get("API_HASH", None)
 STRING = os.environ.get("STRING", None)
 
 if API_ID and API_HASH:
-    bot = Client(STRING if STRING else 'athena',
+    bot = Client(STRING if STRING else ':memory:',
         api_id=API_ID,
         api_hash=API_HASH,
+        device_model='muinrobot',
+        app_version=str(ATHENAVER),
+        sleep_threshold=180,
         plugins=dict(
-            root="athena.plugins",
-            sleep_threshold=180
+            root="athena.plugins"
     ))
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
