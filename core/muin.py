@@ -14,7 +14,7 @@ from traceback import format_exc
 from pyrogram import ContinuePropagation, StopPropagation, filters
 from pyrogram.errors import MessageNotModified
 from pyrogram.handlers import MessageHandler
-from athena import BRAIN, TEMP, BOTLOG, PREFIXES, bot as app
+from athena import TEMP, BOTLOG, PREFIXES, bot as app
 
 
 
@@ -130,8 +130,8 @@ def muinrobot(**args):
 
         ####     Extras    ####
 
-        if brain:
-            filter &= filters.user(BRAIN)
+#        if brain:
+#            filter &= filters.user(BRAIN)
 
         if not bot:
             filter &= ~filters.bot
