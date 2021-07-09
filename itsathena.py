@@ -6,4 +6,4 @@
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
 
-from brighteninglotion import *
+from athena.brighteninglotion import *
