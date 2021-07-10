@@ -1,4 +1,4 @@
-from core import muinrobot
+from core.muin import muinrobot
 
 @muinrobot(pattern='^.alive$')
 async def alive(message):
