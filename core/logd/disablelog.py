@@ -1,7 +1,7 @@
 from logging import CRITICAL, DEBUG, INFO, basicConfig, getLogger
 
 
-def disablelog(): #thx to teamderuntergang
+def disablelogs(): #thx to teamderuntergang
     pyrogram_syncer = getLogger('pyrogram.syncer')
     pyrogram_syncer.setLevel(CRITICAL)
     pyrogram_session = getLogger('pyrogram.session.session')
