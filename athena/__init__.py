@@ -55,11 +55,11 @@ def IIIIIIIIIIIIIIIIIIIIII():
 
 PREFIXES = ['.','!']
 
-API_ID = os.environ.get("API_ID", None)
+API_ID = environ.get("API_ID", None)
 
-API_HASH = os.environ.get("API_HASH", None)
+API_HASH = environ.get("API_HASH", None)
 
-STRING = os.environ.get("STRING", None)
+STRING = environ.get("STRING", None)
 
 if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
