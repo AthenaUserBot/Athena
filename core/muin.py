@@ -28,7 +28,7 @@ def muinrobot(**args):
     brain = args.get('brain', False)
     private = args.get('private', True)
     group = args.get('group', True)
-    bots = args.get('bots', False)
+    bots = args.get('bots', True)
     service = args.get('service', False) 
 
 #    if pattern and '.' in pattern[:2]:
@@ -50,12 +50,12 @@ def muinrobot(**args):
                 if not private and message.chat.type in ['private', 'bot']:
                     if not notifyoff:
                         pass # şimdilik
-                    message.continue_propagation()
+                    await message.continue_propagation()
 
                 if not group and 'group' in message.chat.type:
                     if not notifyoff:
                         pass # şimdilik
-                    message.continue_propagation()
+                    await message.continue_propagation()
 
                 if not compat:
                     await func(client, message)
@@ -109,20 +109,20 @@ def muinrobot(**args):
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bot = False
+                bots = False
         elif command:
             filter &= filters.command(commands=command,prefixes=PREFIXES,case_sensitive=True)
             if outgoing and not incoming:
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bot = False
+                bots = False
         else:
             if outgoing and not incoming:
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bot = False
+                bots = False
             else:
                 filter &= (filters.me | filters.incoming)
 
