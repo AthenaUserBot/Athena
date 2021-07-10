@@ -33,7 +33,7 @@ BOTLOG = int(environ.get('BOTLOG',0))
 
 UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
 
-disablelog() # bye 
+disablelogs() # bye 
 
 def IIIIIIIIIIIIIIIIIIIIII():
     try:
