@@ -28,7 +28,7 @@ def muinrobot(**args):
     brain = args.get('brain', False)
     private = args.get('private', True)
     group = args.get('group', True)
-    bot = args.get('bot', True)
+    bots = args.get('bots', False)
     service = args.get('service', False) 
 
 #    if pattern and '.' in pattern[:2]:
@@ -133,7 +133,7 @@ def muinrobot(**args):
 #        if brain:
 #            filter &= filters.user(BRAIN)
 
-        if not bot:
+        if not bots:
             filter &= ~filters.bot
 
         if noedit:
