@@ -27,8 +27,8 @@ def muinrobot(**args):
     compat = args.get('compat', True)
     brain = args.get('brain', False)
     private = args.get('private', True)
+    bot = args.get('bot', True)
     group = args.get('group', True)
-    bots = args.get('bots', True)
     service = args.get('service', False) 
 
 #    if pattern and '.' in pattern[:2]:
@@ -109,23 +109,22 @@ def muinrobot(**args):
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bots = False
+                bot = False
         elif command:
             filter &= filters.command(commands=command,prefixes=PREFIXES,case_sensitive=True)
             if outgoing and not incoming:
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bots = False
+                bot = False
         else:
             if outgoing and not incoming:
                 filter &= filters.me
             elif incoming and not outgoing:
                 filter &= filters.incoming & ~filters.me
-                bots = False
+                bot = False
             else:
                 filter &= (filters.me | filters.incoming)
-
 
 
         ####     Extras    ####
@@ -133,8 +132,11 @@ def muinrobot(**args):
 #        if brain:
 #            filter &= filters.user(BRAIN)
 
-        if not bots:
-            filter &= ~filters.bot
+        try:
+            if not bot:
+                filter &= ~filters.bot
+        except Exception as e:
+            print('Error ',str(e))
 
         if noedit:
             filter &= ~filters.edited
