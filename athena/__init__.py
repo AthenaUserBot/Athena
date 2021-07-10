@@ -1,4 +1,5 @@
 from core.err import NerdeBuBilgiAmk
+from distutils.util import strtobool
 from typing import Any, Dict
 from os import environ, path
 from sqlite3 import connect
@@ -8,7 +9,7 @@ from core.logd import *
 from time import time
 
 
-LOGGERVERBOSE = sb(environ.get("LOGGERVERBOSE", "False"))
+LOGGERVERBOSE = strtobool(environ.get("LOGGERVERBOSE", "False"))
 
 if LOGGERVERBOSE:
     basicConfig(
