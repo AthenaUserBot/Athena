@@ -19,11 +19,11 @@
 Yakında 
 ```
 
-### 🇹🇷 Elle Kurulum / Manual Setup 🇺🇲
+### Elle Kurulum / Manual Setup
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/athenauserbot/athenauserbot)
 
-## 🇹🇷 Bilgilendirme / İnformation 🇺🇲
+##Bilgilendirme / İnformation
 ***Herhangi bir sorun olursa [destek grubuna](https://t.me/AthenaSupport) ulaşabilirsiniz.***
 
 ***You can reach the [support group](https://t.me/AthenaSupport) if there is any problem.***
