@@ -58,9 +58,9 @@ def muinrobot(**args):
                     message.continue_propagation()
 
                 if not compat:
-                    func(client, message)
+                    await func(client, message)
                 else:
-                    func(message)
+                    await func(message)
             except (ContinuePropagation, StopPropagation) as c:
                 raise c
             except MessageNotModified:
