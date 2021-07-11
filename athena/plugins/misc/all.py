@@ -1,18 +1,20 @@
 #AthenaUserBot | All plugini
 
+from athena.func import extract_text
 from athena import bot as app
 from core.muin import muinrobot
 from asyncio import sleep
 
 @muinrobot(outgoing=True, pattern="^.all(?: |$)(.*)")
 async def alll(q):
-    try:
-        sebep = q.command[1]
-    except IndexError:
-        sebep = ' '        
+    sebep = await extract_text(q)
+
     chat = q.chat.id
+
     a_=0
-    await q.delete()
+    seb = f'"{sebep}' + 'için"' if sebep else ''
+    await q.edit_text(f'**🔄 Athena {seb} etiketlemeyi başlatıyor..**')
+
     async for member in app.iter_chat_members(chat):
         if a_ == 5000:
             break
@@ -23,10 +25,7 @@ async def alll(q):
 
 @muinrobot(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
 async def alladmin(q):
-    try:
-        sebep = q.command[1]
-    except IndexError:
-        sebep = ' '        
+    sebep = await extract_text(q)
     chat = q.chat.id
     a_=0
     await q.delete()
