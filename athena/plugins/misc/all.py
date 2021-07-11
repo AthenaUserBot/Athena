@@ -1,11 +1,15 @@
 #AthenaUserBot | All plugini
+
 from athena import bot as app
 from core.muin import muinrobot
 from asyncio import sleep
 
 @muinrobot(outgoing=True, pattern="^.all(?: |$)(.*)")
 async def alll(q):
-
+    try:
+        sebep = message.command[1]
+    except IndexError:
+        sebep = ''        
     chat = q.chat.id
     a_=0
     await q.delete()
@@ -13,12 +17,16 @@ async def alll(q):
         if a_ == 5000:
             break
         a_+=1
-        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id))
-        await sleep(4)
+        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
+        await sleep(3)
 
 
 @muinrobot(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
 async def _(q):
+    try:
+        sebep = message.command[1]
+    except IndexError:
+        sebep = ''        
     chat = q.chat.id
     a_=0
     await q.delete()
@@ -27,6 +35,6 @@ async def _(q):
         if a_ == 5000:
             break
         a_+=1
-        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id))
-        await sleep(4)
+        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
+        await sleep(3)
 
