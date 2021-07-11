@@ -7,9 +7,9 @@ from asyncio import sleep
 @muinrobot(outgoing=True, pattern="^.all(?: |$)(.*)")
 async def alll(q):
     try:
-        sebep = message.command[1]
+        sebep = q.command[1]
     except IndexError:
-        sebep = ''        
+        sebep = ' '        
     chat = q.chat.id
     a_=0
     await q.delete()
@@ -22,15 +22,15 @@ async def alll(q):
 
 
 @muinrobot(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
-async def _(q):
+async def alladmin(q):
     try:
-        sebep = message.command[1]
+        sebep = q.command[1]
     except IndexError:
-        sebep = ''        
+        sebep = ' '        
     chat = q.chat.id
     a_=0
     await q.delete()
-    admin_list = [i.user for i in await bot.get_chat_members(call.message.chat.id, filter="administrators")]
+    admin_list = [i.user for i in await bot.get_chat_members(chat, filter="administrators")]
     for i in admin_list:
         if a_ == 5000:
             break
