@@ -65,8 +65,9 @@ if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
         api_id=API_ID,
         api_hash=API_HASH,
-        device_model='muinrobot',
-        app_version=str(ATHENAVER),
+        device_model='@muinrobot',
+        system_version='Sorunlarınız için @AthenaSupport',
+        app_version=str('|' + ATHENAVER),
         sleep_threshold=180,
         plugins=dict(
             root="athena.plugins"
