@@ -5,7 +5,7 @@ from athena.func import extract_text
 from core.muin import muinrobot
 from asyncio import sleep
 
-@muinrobot(outgoing=True, pattern="^.all(?: |$)(.*)")
+@muinrobot(outgoing=True, pattern="^.all")
 async def alll(q):
     sebep = await extract_text(q)
 
@@ -30,7 +30,7 @@ async def alll(q):
     await app.send_message(chat,AllFinish)
 
 
-@muinrobot(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
+@muinrobot(outgoing=True, pattern="^.alladmin")
 async def alladmin(q):
     sebep = await extract_text(q)
     chat = q.chat.id
