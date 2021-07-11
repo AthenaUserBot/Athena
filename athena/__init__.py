@@ -1,6 +1,6 @@
+from logging import CRITICAL, DEBUG, INFO, basicConfig, getLogger
 from core.err import NerdeBuBilgiAmk
 from distutils.util import strtobool
-from core.logd.disablelog import *
 from typing import Any, Dict
 from os import environ, path
 from sqlite3 import connect
@@ -24,6 +24,16 @@ else:
         datefmt='%d-%b-%y %H:%M:%S')
 
 WORKTIME = time()
+
+def disablelogs(): #thx to teamderuntergang
+    pyrogram_main = getLogger('pyrogram')
+    pyrogram_main.setLevel(CRITICAL)
+    pyrogram_syncer = getLogger('pyrogram.syncer')
+    pyrogram_syncer.setLevel(CRITICAL)
+    pyrogram_session = getLogger('pyrogram.session.session')
+    pyrogram_session.setLevel(CRITICAL)
+    pyrogram_auth = getLogger('pyrogram.session.auth')
+    pyrogram_auth.setLevel(CRITICAL)
 
 ATHENAVER = 'v0.1'
 
