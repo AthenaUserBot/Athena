@@ -55,6 +55,9 @@ def IIIIIIIIIIIIIIIIIIIIII():
 
 PREFIXES = ['.','!']
 
+BOT_NAME = environ.get("BOT_NAME", 'athena')
+BOT_NAME = BOT_NAME.title()
+
 API_ID = environ.get("API_ID", None)
 
 API_HASH = environ.get("API_HASH", None)
@@ -66,8 +69,8 @@ if API_ID and API_HASH:
         api_id=API_ID,
         api_hash=API_HASH,
         device_model='@muinrobot',
-        system_version='Sorunlarınız için @AthenaSupport',
-        app_version=str('|' + ATHENAVER),
+        system_version='Sorularınız için @AthenaSupport',
+        app_version=str('| ' + ATHENAVER),
         sleep_threshold=180,
         plugins=dict(
             root="athena.plugins"
