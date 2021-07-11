@@ -15,7 +15,7 @@ async def alll(q):
 
     a_=0
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
-    await q.edit_text(f'**🔄 Athena {seb} etiketlemeyi başlatıyor..**')
+    await q.edit_text(f'**🔄 {BOT_NAME} {seb} etiketlemeyi başlatıyor..**')
 
     async for member in app.iter_chat_members(chat):
         if a_ == 5000:
