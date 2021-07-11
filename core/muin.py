@@ -10,6 +10,7 @@ from subprocess import PIPE, Popen
 from sys import exc_info
 from time import gmtime, strftime
 from traceback import format_exc
+from athena.func import to_be_sent
 
 from pyrogram import ContinuePropagation, StopPropagation, filters
 from pyrogram.errors import MessageNotModified
@@ -69,7 +70,7 @@ def muinrobot(**args):
             except MessageNotModified:
                 return
             except Exception as e:
-                gonderilecek = BOTLOG if BOTLOG else message.chat.id
+                gonderilecek = await to_be_sent(message.chat)
                 try:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
                     try:
