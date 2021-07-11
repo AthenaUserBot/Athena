@@ -5,6 +5,9 @@ from athena.func import extract_text
 from core.muin import muinrobot
 from asyncio import sleep
 
+AdminNotFound = "**❌ Burada senden başka admin yok..**"
+MemberNotFound = "**❌ Burada senden başka üye yok..**"
+
 @muinrobot(outgoing=True, pattern="^.all")
 async def alll(q):
     sebep = await extract_text(q)
@@ -15,7 +18,7 @@ async def alll(q):
 
     a_=0
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
-    await q.edit_text(f'**🔄 Athena {seb} etiketlemeyi başlatıyor..**')
+    await q.edit_text(f'**🔄 {BOT_NAME} {seb} etiketlemeyi başlatıyor..**')
 
     async for member in app.iter_chat_members(chat):
         if a_ == 5000:
@@ -26,7 +29,8 @@ async def alll(q):
             a_+=1
             await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
         await sleep(3)
-    AllFinish = f"**✅ Athena etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka üye yok..**"
+
+    AllFinish = f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..**" if not int(a_) < 1 else MemberNotFound
     await app.send_message(chat,AllFinish)
 
 
@@ -39,7 +43,7 @@ async def alladmin(q):
     ben = TEMP['ME'].id
 
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
-    await q.edit_text(f'**🔄 Athena {seb} admin etiketlemesini başlatıyor..**')
+    await q.edit_text(f'**🔄 {BOT_NAME} {seb} admin etiketlemesini başlatıyor..**')
     admin_list = [i.user for i in await app.get_chat_members(chat, filter="administrators")]
     for i in admin_list:
         if a_ == 5000:
@@ -50,6 +54,6 @@ async def alladmin(q):
             a_+=1
             await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
         await sleep(3)
-    AllFinish = f"**✅ Athena admin etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka admin yok..**"
+    AllFinish = f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**" if not int(a_) < 1 else AdminNotFound
     await app.send_message(chat,AllFinish)
 
