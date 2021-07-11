@@ -14,7 +14,7 @@ async def alll(q):
     chat = q.chat.id
 
     a_=0
-    seb = f'"{sebep} ' + 'için"' if sebep not '' else ''
+    seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
     await q.edit_text(f'**🔄 Athena {seb} etiketlemeyi başlatıyor..**')
 
     async for member in app.iter_chat_members(chat):
@@ -37,7 +37,7 @@ async def alladmin(q):
 
     ben = TEMP['ME'].id
 
-    seb = f'"{sebep} ' + 'için"' if sebep not '' else ''
+    seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
     await q.edit_text(f'**🔄 {BOT_NAME} {seb} admin etiketlemesini başlatıyor..**')
     admin_list = [i.user for i in await bot.get_chat_members(chat, filter="administrators")]
     for i in admin_list:
