@@ -74,25 +74,25 @@ def muinrobot(**args):
                     except:
                         eventtext = 'Probably service message'
                     gusername = str(message.chat.username) if message.chat.username else 'None'
-                    text = "<b>==ATHENA HATA RAPORU==</b>\n"
-                    text += f"\n<b>⌚ Tarih:</b> {date}\n"
-                    text += f"<b>🗒️ Şu yüzden:</b> {eventtext}"
+                    text = "==ATHENA HATA RAPORU==\n"
+                    text += f"\n⌚ Tarih: {date}\n"
+                    text += f"🗒️ Şu yüzden: {eventtext}"
 
-                    ftext = "<b>" + "--------ATHENA ERROR LOG--------\n" + "</b>"
-                    ftext += "\n<b>📆 Tarih:</b> " + f"<i>{date}</i>"
-                    ftext += "\n🇫🇲 <b>Grup ID:</b> " + f"<i>{str(message.chat.id)}</i>"
+                    ftext = "--------ATHENA ERROR LOG--------\n"
+                    ftext += "\n📆 Tarih: " + date
+                    ftext += "\n🇫🇲 Grup ID: " + str(message.chat.id)
                     if message.chat.title:
-                        ftext += "\n🏷️ <b>Sohbet İsmi</b>: " + f"<i>{str(message.chat.title)}</i>"
-                    ftext += "\n🧠 <b>Grup Username:</b> " + f"{str(gusername)}"
-                    ftext += "\n🐟 <b>Gönderen kişinin ismi:</b>" + f"<i>{str(message.from_user.first_name)}</i>"
-                    ftext += "\n🐟 <b>Gönderen kişinin ID: </b>" + f"<i>{str(message.from_user.id)}</i>"
-                    ftext += "\n\n📃 <b>Olay Tetikleyici:</b>\n"
-                    ftext += "<i>" + str(message.text) + "</i>"
-                    ftext += "\n\n🔸 <b>Hata metni:</b>\n"
-                    ftext += "<i>" + str(exc_info()[1]) + "</i>"
-                    ftext += "\n\n\n🔧 <b>Geri izleme bilgisi:</b>\n"
-                    ftext += "<i>" + str(format_exc()) + "</i>"
-                    ftext += "\n\n<b>--------ATHENA ERROR LOG--------" + "</b>"
+                        ftext += "\n🏷️ Sohbet İsmi: " + str(message.chat.title)
+                    ftext += "\n🧠 Grup Username: " + str(gusername)
+                    ftext += "\n🐟 Gönderen kişinin ismi:" + str(message.from_user.first_name)
+                    ftext += "\n🐟 Gönderen kişinin ID: " + str(message.from_user.id)
+                    ftext += "\n\n📃 Olay Tetikleyici:\n"
+                    ftext += str(message.text) 
+                    ftext += "\n\n🔸 Hata metni:\n"
+                    ftext += str(exc_info()[1])
+                    ftext += "\n\n\n🔧 Geri izleme bilgisi:\n"
+                    ftext += str(format_exc())
+                    ftext += "\n\n--------ATHENA ERROR LOG--------"
                     try:
                         with open("error.log", "w+") as errorfile:
                             errorfile.write(ftext)
