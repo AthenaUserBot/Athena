@@ -66,6 +66,7 @@ def muinrobot(**args):
             except MessageNotModified:
                 return
             except Exception as e:
+                gonderilecek = BOTLOG if BOTLOG else message.chat.id
                 try:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
                     try:
@@ -95,7 +96,7 @@ def muinrobot(**args):
                     try:
                         with open("error.log", "w+") as errorfile:
                             errorfile.write(ftext)
-                        await app.send_document(BOTLOG,'error.log',caption=text)
+                        await app.send_document(gonderilecek,'error.log',caption=text)
                         remove('error.log')
                     except:
                         print(ftext)
