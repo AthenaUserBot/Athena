@@ -15,7 +15,7 @@ async def alll(q):
 
     a_=0
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
-    await q.edit_text(f'**🔄 {BOT_NAME} {seb} etiketlemeyi başlatıyor..**')
+    await q.edit_text(f'**🔄 Athena {seb} etiketlemeyi başlatıyor..**')
 
     async for member in app.iter_chat_members(chat):
         if a_ == 5000:
@@ -26,7 +26,7 @@ async def alll(q):
             a_+=1
             await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
         await sleep(3)
-    AllFinish = f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka üye yok..**"
+    AllFinish = f"**✅ Athena etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka üye yok..**"
     await app.send_message(chat,AllFinish)
 
 
@@ -39,7 +39,7 @@ async def alladmin(q):
     ben = TEMP['ME'].id
 
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
-    await q.edit_text(f'**🔄 {BOT_NAME} {seb} admin etiketlemesini başlatıyor..**')
+    await q.edit_text(f'**🔄 Athena {seb} admin etiketlemesini başlatıyor..**')
     admin_list = [i.user for i in await app.get_chat_members(chat, filter="administrators")]
     for i in admin_list:
         if a_ == 5000:
@@ -50,6 +50,6 @@ async def alladmin(q):
             a_+=1
             await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
         await sleep(3)
-    AllFinish = f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka admin yok..**"
+    AllFinish = f"**✅ Athena admin etiketleme işlemini bitirdi..**" if not int(a_) < 1 else f"**❌ Burada senden başka admin yok..**"
     await app.send_message(chat,AllFinish)
 
