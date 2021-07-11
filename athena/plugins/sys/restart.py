@@ -7,7 +7,7 @@ from core.muin import muinrobot
 async def restart(event):
     await event.edit_text(f'🔄 {BOT_NAME} yeniden başlatılıyor..')
     try:
-        app.restart()
+        await app.restart()
     except:
         pass
     await event.edit_text(f'✅ {BOT_NAME} yeniden başlatıldı..')
