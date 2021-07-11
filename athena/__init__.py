@@ -6,7 +6,6 @@ from os import environ, path
 from sqlite3 import connect
 from pyrogram import Client
 from requests import get
-from core.logd import *
 from time import time
 
 
