@@ -39,7 +39,7 @@ async def alladmin(q):
 
     seb = f'"{sebep} ' + 'için"' if sebep != '' else ''
     await q.edit_text(f'**🔄 {BOT_NAME} {seb} admin etiketlemesini başlatıyor..**')
-    admin_list = [i.user for i in await bot.get_chat_members(chat, filter="administrators")]
+    admin_list = [i.user for i in await app.get_chat_members(chat, filter="administrators")]
     for i in admin_list:
         if a_ == 5000:
             break
