@@ -26,7 +26,8 @@ async def alll(q):
             a_+=1
         await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
         await sleep(3)
-    await app.send_message(chat,f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..\n🗒️ Toplam {a_} kişi etiketlendi..**")
+    AllFinish = f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..**" if a_ < 1 else f"**❌ Burada senden başka üye yok..**"
+    await app.send_message(chat,AllFinish)
 
 
 @muinrobot(outgoing=True, pattern="^.alladmin(?: |$)(.*)")
@@ -43,11 +44,12 @@ async def alladmin(q):
     for i in admin_list:
         if a_ == 5000:
             break
-        if member.user.id == ben:
+        if i.id == ben:
             continue
         else:
             a_+=1
         await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
         await sleep(3)
-    await app.send_message(chat,f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**")
+    AllFinish = f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**" if a_ < 1 else f"**❌ Burada senden başka admin yok..**"
+    await app.send_message(chat,AllFinish)
 
