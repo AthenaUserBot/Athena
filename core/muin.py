@@ -35,7 +35,10 @@ def muinrobot(**args):
 #        args['pattern'] = pattern = pattern.replace('.', PREFIX)
 
     if pattern and pattern[-1:] != '$':
-        args['pattern'] = pattern = f'{pattern}(?: |$)'
+        args['pattern'] = pattern = f'{pattern}(?: |$)(.*)'
+
+    if incoming != False:
+        outgoing = False
 
     def msg_decorator(func):
         async def wrap(client, message):
