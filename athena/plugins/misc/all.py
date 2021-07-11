@@ -24,9 +24,9 @@ async def alll(q):
             continue
         else:
             a_+=1
-        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
+            await app.send_message(chat, "[{}](tg://user?id={}) {}".format(member.user.first_name, member.user.id, sebep))
         await sleep(3)
-    AllFinish = f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..**" if a_ < 1 else f"**❌ Burada senden başka üye yok..**"
+    AllFinish = f"**✅ {BOT_NAME} etiketleme işlemini bitirdi..**" if not int(a_) > 1 else f"**❌ Burada senden başka üye yok..**"
     await app.send_message(chat,AllFinish)
 
 
@@ -48,8 +48,8 @@ async def alladmin(q):
             continue
         else:
             a_+=1
-        await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
+            await app.send_message(chat, "[{}](tg://user?id={}) {}".format(i.first_name, i.id,sebep))
         await sleep(3)
-    AllFinish = f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**" if a_ < 1 else f"**❌ Burada senden başka admin yok..**"
+    AllFinish = f"**✅ {BOT_NAME} admin etiketleme işlemini bitirdi..**" if not int(a_) > 1 else f"**❌ Burada senden başka admin yok..**"
     await app.send_message(chat,AllFinish)
 
