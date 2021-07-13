@@ -2,6 +2,9 @@ from athena import AFKMOD, bot
 from core.muin import muinrobot
 from athena.func import it, ct
 
+TOTALMSSSSGS = 0
+
+
 @muinrobot(pattern='^.afk')
 async def afkmodon(message):
     global AFKMOD
@@ -19,3 +22,15 @@ async def _(_):
         await bot.send_message(_.chat.id,it)
         AFKMOD = False
     await message.continue_propagation()
+
+
+@muinrobot(
+    incoming=True
+):
+    global TOTALMSSSSGS
+    if AFKMOD:
+        it = await it('😔 Şuanda sahibim afk:/')
+        await message.reply_text(it)
+        int(TOTALMSSSSGS) += 1
+
+        
