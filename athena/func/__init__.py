@@ -7,3 +7,14 @@ async def extract_text(message):
 async def to_be_sent(chat):
     from athena import BOTLOG
     return BOTLOG if BOTLOG else chat.id
+
+async def it(text):
+    return '<i>' + text + '</i>'
+
+async def bt(text):
+    return '<i>' + text + '</b>'
+
+async def ct(text):
+    return '<code>' + text + '</code>'
+
+
