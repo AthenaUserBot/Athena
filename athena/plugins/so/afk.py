@@ -36,6 +36,6 @@ async def afkkont(
     if AFKMOD:
         it = await it('😔 Şuanda sahibim afk:/')
         await message.reply_text(it)
-        int(TOTALMSSSSGS) += 1
+        TOTALMSSSSGS = TOTALMSSSSGS + 1
 
         
