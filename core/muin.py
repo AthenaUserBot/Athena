@@ -42,6 +42,7 @@ def muinrobot(**args):
         outgoing = False
 
     def msg_decorator(func):
+        global bot
         async def wrap(client, message):
             if message.empty or not message.from_user:
                 return
