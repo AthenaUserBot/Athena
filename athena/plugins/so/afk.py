@@ -1,4 +1,4 @@
-from athena import AFKMOD, bot
+from athena import AFKMOD
 from core.muin import muinrobot
 from athena.func import it, ct
 
@@ -14,9 +14,11 @@ async def afkmodon(message):
     text = await ct("🥺 Artık ekrandan çok uzaktayım..")
     await message.edit_text(text)
 
+from athena import bot
 
 @muinrobot()
 async def _(_):
+    global AFKMOD, bot
     if AFKMOD:
         it = await it('😆 Artık afk değilim!')
         await bot.send_message(_.chat.id,it)
