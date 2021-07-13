@@ -18,16 +18,19 @@ from athena import bot
 
 @muinrobot()
 async def _(_):
-    global AFKMOD, bot
+    global AFKMOD,bot
     if AFKMOD:
         it = await it('😆 Artık afk değilim!')
         await bot.send_message(_.chat.id,it)
         AFKMOD = False
-    await message.continue_propagation()
+    await _.continue_propagation()
 
 
 @muinrobot(
     incoming=True
+)
+async def afkkont(
+    message
 ):
     global TOTALMSSSSGS
     if AFKMOD:
