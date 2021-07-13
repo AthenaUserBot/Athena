@@ -28,7 +28,7 @@ def muinrobot(**args):
     compat = args.get('compat', True)
     brain = args.get('brain', False)
     private = args.get('private', True)
-    bot = args.get('bot', True)
+    ubot = args.get('bot', True)
     group = args.get('group', True)
     service = args.get('service', False) 
 
@@ -139,10 +139,10 @@ def muinrobot(**args):
 #            filter &= filters.user(BRAIN)
 
         try:
-            if not bot:
+            if not ubot:
                 filter &= ~filters.bot
         except Exception as e:
-            print('Error ',str(e))
+            print('Error: ',str(e))
 
         if noedit:
             filter &= ~filters.edited
