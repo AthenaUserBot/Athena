@@ -1,5 +1,4 @@
-from pyrogram import filters
-from athena import AFKMOD, bot
+from athena import AFKMOD
 from core.muin import muinrobot
 from athena.func import it, ct
 
@@ -16,6 +15,7 @@ async def afkmodon(message):
     AFKMOD = True
     await message.edit_text(text)
 
+from pyrogram import filters
 from athena import bot
 
 @muinrobot()
@@ -26,8 +26,6 @@ async def _(_):
         await bot.send_message(_.chat.id,it)
         AFKMOD = False
     await _.continue_propagation()
-
-IS_AFK_FILTER = 
 
 @bot.on_message(
     filters.create(lambda _, __, ___: bool(AFKMOD))
