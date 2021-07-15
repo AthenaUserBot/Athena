@@ -23,14 +23,16 @@ from athena import bot
 async def _(_):
     global AFKMOD,bot
     if AFKMOD:
-        it = await it('😆 Artık afk değilim!')
-        await bot.send_message(_.chat.id,it)
+        itq = await it('😆 Artık afk değilim!')
+        await bot.send_message(_.chat.id,itq)
         AFKMOD = False
     await _.continue_propagation()
 
 @bot.on_message(
     filters.create(lambda _, __, ___: bool(AFKMOD))
-    & ~filters.me & ~filters.bot & ~filters.edited & (
+    & ~filters.me
+    & ~filters.bot
+    & ~filters.edited & (
         filters.mentioned
         | (
             filters.private
@@ -44,8 +46,7 @@ async def afkkont(
 ):
     global TOTALMSSSSGS
     if AFKMOD:
-        it = await it('😔 Şuanda sahibim afk:/')
-        await message.reply_text(it)
+        await message.reply_text(await it('😔 Şuanda sahibim afk:/'))
         TOTALMSSSSGS = TOTALMSSSSGS + 1
 
         
