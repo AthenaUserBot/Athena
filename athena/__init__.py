@@ -1,4 +1,4 @@
-from logging import CRITICAL, WARNING, DEBUG, INFO, basicConfig, getLogger
+from logging import CRITICAL, WARNING, ERROR, DEBUG, INFO, basicConfig, getLogger
 from core.err import NerdeBuBilgiAmk
 from distutils.util import strtobool
 from typing import Any, Dict
@@ -17,6 +17,8 @@ def disablelogs(): #thx to teamderuntergang
     pyrogram_main.setLevel(WARNING)
     pyrogram_syncer = getLogger('pyrogram.syncer')
     pyrogram_syncer.setLevel(CRITICAL)
+    pyrogram_syncer = getLogger('pyrogram.client')
+    pyrogram_syncer.setLevel(ERROR)
     pyrogram_session = getLogger('pyrogram.session.session')
     pyrogram_session.setLevel(CRITICAL)
     pyrogram_auth = getLogger('pyrogram.session.auth')
