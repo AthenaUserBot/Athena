@@ -1,4 +1,5 @@
-from athena import AFKMOD
+from pyrogram import filters
+from athena import AFKMOD, bot
 from core.muin import muinrobot
 from athena.func import it, ct
 
@@ -12,6 +13,7 @@ async def afkmodon(message):
         text = await it("😳 Şuanda zaten a-afk'sın!")
         return await message.edit_text(text)
     text = await ct("🥺 Artık ekrandan çok uzaktayım..")
+    AFKMOD = True
     await message.edit_text(text)
 
 from athena import bot
@@ -25,9 +27,17 @@ async def _(_):
         AFKMOD = False
     await _.continue_propagation()
 
+IS_AFK_FILTER = 
 
-@muinrobot(
-    incoming=True
+@bot.on_message(
+    filters.create(lambda _, __, ___: bool(AFKMOD))
+    & ~filters.me & ~filters.bot & ~filters.edited & (
+        filters.mentioned
+        | (
+            filters.private
+            & ~filters.service
+        )
+    )
 )
 async def afkkont(
     message
