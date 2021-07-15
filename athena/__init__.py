@@ -78,11 +78,12 @@ if API_ID and API_HASH:
         api_id=API_ID,
         api_hash=API_HASH,
         device_model='@muinrobot',
-        system_version='Sorularınız için @AthenaSupport',
+        system_version=' | Sorularınız için @AthenaSupport',
         app_version=str('| ' + ATHENAVER),
         sleep_threshold=180,
         plugins=dict(
-            root="plugins"
+            root="plugins",
+            exclude=["test"]            
     ))
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
