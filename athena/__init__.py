@@ -1,4 +1,4 @@
-from logging import CRITICAL, DEBUG, INFO, basicConfig, getLogger
+from logging import CRITICAL, WARNING, DEBUG, INFO, basicConfig, getLogger
 from core.err import NerdeBuBilgiAmk
 from distutils.util import strtobool
 from typing import Any, Dict
@@ -8,25 +8,13 @@ from pyrogram import Client
 from requests import get
 from time import time
 
-
 LOGGERVERBOSE = strtobool(environ.get("LOGGERVERBOSE", "False"))
-
-if LOGGERVERBOSE:
-    basicConfig(
-        level=DEBUG,
-        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
-        datefmt='%d-%b-%y %H:%M:%S')
-else:
-    basicConfig(
-        level=INFO,
-        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
-        datefmt='%d-%b-%y %H:%M:%S')
 
 WORKTIME = time()
 
 def disablelogs(): #thx to teamderuntergang
     pyrogram_main = getLogger('pyrogram')
-    pyrogram_main.setLevel(CRITICAL)
+    pyrogram_main.setLevel(WARNING)
     pyrogram_syncer = getLogger('pyrogram.syncer')
     pyrogram_syncer.setLevel(CRITICAL)
     pyrogram_session = getLogger('pyrogram.session.session')
@@ -38,11 +26,25 @@ ATHENAVER = 'v0.1'
 
 TEMP: Dict[Any, Any] = {}
 
-BOTLOG = int(environ.get('BOTLOG',0))
+try:
+    BOTLOG = int(environ.get('BOTLOG',0))
+except:
+    BOTLOG = 0
 
 UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
 
 disablelogs() # bye 
+
+if LOGGERVERBOSE:
+    basicConfig(
+        level=DEBUG,
+        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
+        datefmt='%d-%b-%y %H:%M:%S')
+else:
+    basicConfig(
+        level=INFO,
+        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
+        datefmt='%d-%b-%y %H:%M:%S')
 
 def IIIIIIIIIIIIIIIIIIIIII():
     try:
@@ -74,6 +76,7 @@ API_HASH = environ.get("API_HASH", None)
 STRING = environ.get("STRING", None)
 
 plugins= dict(
+    root="plugins",
     exclude=["test"]            
 )
 
