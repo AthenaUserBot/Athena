@@ -73,6 +73,10 @@ API_HASH = environ.get("API_HASH", None)
 
 STRING = environ.get("STRING", None)
 
+plugins= dict(
+    exclude=["test"]            
+)
+
 if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
         api_id=API_ID,
@@ -80,11 +84,10 @@ if API_ID and API_HASH:
         device_model='@muinrobot',
         system_version=' | Sorularınız için @AthenaSupport',
         app_version=str('| ' + ATHENAVER),
+        hide_password=True,
         sleep_threshold=180,
-        plugins=dict(
-            root="plugins",
-            exclude=["test"]            
-    ))
+        plugins=plugins
+)
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
    
