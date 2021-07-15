@@ -21,6 +21,7 @@ from athena import TEMP, BOTLOG, PREFIXES, bot as app
 
 def muinrobot(**args):
     pattern = args.get('pattern', None)
+    pattern = args.get('command', None)
     outgoing = args.get('outgoing', True)
     incoming = args.get('incoming', False)
     noedit = args.get('noedit', False)
