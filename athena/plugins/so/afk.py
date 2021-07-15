@@ -3,6 +3,7 @@ from core.muin import muinrobot
 from athena.func import it, ct
 
 TOTALMSSSSGS = 0
+AFK_ALLOWEDUSER = {}
 
 
 @muinrobot(pattern='^.afk')
@@ -38,6 +39,7 @@ async def _(_):
     )
 )
 async def afkkont(
+    client,
     message
 ):
     global TOTALMSSSSGS
