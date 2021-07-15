@@ -82,7 +82,7 @@ if API_ID and API_HASH:
         app_version=str('| ' + ATHENAVER),
         sleep_threshold=180,
         plugins=dict(
-            root="athena.plugins"
+            root="plugins"
     ))
 else:
     raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
