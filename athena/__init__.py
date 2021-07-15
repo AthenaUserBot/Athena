@@ -76,7 +76,7 @@ API_HASH = environ.get("API_HASH", None)
 STRING = environ.get("STRING", None)
 
 plugins= dict(
-    root="plugins",
+    root="athena.plugins",
     exclude=["test"]            
 )
 
