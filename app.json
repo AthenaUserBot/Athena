@@ -13,11 +13,11 @@
   "success_url": "https://t.me/AthenaSupport",
   "stack": "container",
   "env": {
-    "APIKEY": {
+    "API_ID": {
       "description": "Bu değeri my.telegram.org adresinden alın.",
       "required": true
     },
-    "APIHASH": {
+    "API_HASH": {
       "description": "Bu değeri my.telegram.org adresinden alın.",
       "required": true
     },
