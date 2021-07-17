@@ -94,7 +94,9 @@ if API_ID and API_HASH:
         plugins=plugins
 )
 else:
-    raise NerdeBuBilgiAmk('Hesabınız ile ilgili tüm bilgilerini girin!')
+    acont = '✅' if API_ID is not None else '❌'
+    hcont = '✅' if API_HASH is not None else '❌'
+    raise NerdeBuBilgiAmk(f'Hesabınız ile ilgili tüm bilgilerini girin!\n>>>>  API_ID {acont}\n>>>>  API_HASH: {hcont}')
    
 
 
