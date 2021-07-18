@@ -24,7 +24,7 @@ from athena import bot
 
 @muinrobot()
 async def _(_):
-    global AFKMOD,bot
+    global AFKMOD, TOTALMSSSSGS
     if AFKMOD:
         AFKMOD = False
         await bot.send_message(
@@ -32,7 +32,7 @@ async def _(_):
             await it('😆 Artık afk değilim!')
             )
         await send_botlog(
-            await ct('#NoAFK\nAFK iken gelen mesaj sayısı : {TOTALMSSSSGS}')
+            await ct(f'#NoAFK\nAFK iken gelen mesaj sayısı : {TOTALMSSSSGS}')
         )     #Botlog'a bildir
         TOTALMSSSSGS = 0
     await _.continue_propagation()
