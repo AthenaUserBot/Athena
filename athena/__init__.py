@@ -79,7 +79,7 @@ STRING = environ.get("STRING", None)
 
 plugins= dict(
     root="athena.plugins",
-    exclude=["test"]            
+    exclude=["test","extra.zup"]            
 )
 
 if API_ID and API_HASH:
