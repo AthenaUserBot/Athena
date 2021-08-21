@@ -1,5 +1,6 @@
 from . import *
 from pyrogram import idle
+import chromedriver_autoinstaller
 from .plugins.extra.zup import tg_userbotinstaller
 
 try:
@@ -8,6 +9,10 @@ except:
     print("Athena starting...")
 finally:
     bot.start()
+    try:
+        chromedriver_autoinstaller.install()
+    except:
+        pass
     tg_userbotinstaller()
 
 bot.set_parse_mode()
