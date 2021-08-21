@@ -1,6 +1,7 @@
 beautifulsoup4
 dnspython
-git+https://github.com/code-rgb/google-images-download.git
+git+https://github.com/must4f/google-images-download.git
+chromedriver-autoinstaller
 heroku3
 telegraph
 tgcrypto
