@@ -12,4 +12,5 @@ def tg_userbotinstaller():
                 plugin = message.download()
                 print(f'{file_name} yüklendi!')
             else:
+                print(f'{file_name} atlandı!')
                 pass # Şimdilik
