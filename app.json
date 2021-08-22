@@ -40,7 +40,7 @@
     },
     "UPSTREAMREPO": {
       "description": "Fork sağlamanız durumunda repo URL'nizi buraya ekleyin. Varsayılan olarak kendi repo adresimiz eklidir.",
-      "value": "https://github.com/Athenauserbot/AsenaUserBot",
+      "value": "https://github.com/Athenauserbot/Athena.git",
       "required": true
     },
     "COUNTRY": {
