@@ -3,6 +3,8 @@ from athena.func import extract_text
 from athena import UPSTREAMREPO, HEROKUAPIKEY, HEROKUAPP
 
 from git import Repo  
+from os import remove, execle, path, environ
+import asyncio, sys
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError # Thx To Seden Team
 
 requirements_path = path.join(
