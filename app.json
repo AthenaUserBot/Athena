@@ -99,7 +99,7 @@
     },
     "DEFAULTBIO": {
       "description": "Varsayılan profil biyografisi.",
-      "value": "💍 @AthenaUserBot",
+      "value": "🌩️ @AthenaUserBot",
       "required": false
     },
     "LANGUAGE": {
