@@ -10,5 +10,6 @@ def tg_userbotinstaller():
 
             if not os.path.exists("./athena/plugins/extra/" + file_name):
                 plugin = message.download()
+                print(f'{file_name} yüklendi!')
             else:
                 pass # Şimdilik
