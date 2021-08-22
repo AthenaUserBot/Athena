@@ -74,16 +74,16 @@ async def updater(ups):
 
     changelog = gen_chlog(repo, f'HEAD..upstream/{ac_br}')
     if not changelog and not force_update:
-        await ups.edit_text('Güncelleme bulunamadı!')
+        await ups.edit_text('**💕 | Güncelleme bulunamadı, süper!**')
         repo.__del__()
         return
 
 #    if conf != "now" and not force_update:
 
     if force_update:
-        await ups.edit_text('**Zorla Güncelleniyor..**')
+        await ups.edit_text('**🔄 | Zorla Güncelleniyor..**')
     else:
-        await ups.edit_text('**Güncelleniyor..**')
+        await ups.edit_text('**🔄 | Güncelleniyor..**')
 
     if HEROKUAPIKEY is not None:
         import heroku3
@@ -104,7 +104,7 @@ async def updater(ups):
             )
             repo.__del__()
             return
-        await ups.edit_text('**Heroku üzerinde güncelleniyor..**')
+        await ups.edit_text('**🔄 | Heroku üzerinde güncelleniyor..**')
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -120,7 +120,7 @@ async def updater(ups):
             await ups.edit_text(f'{txt}\n`ERROR:\n{error}`')
             repo.__del__()
             return
-        await ups.edit_text('💕 Güncelleme başarıyla tamamlandı!')
+        await ups.edit_text('**✅ | Güncelleme başarıyla tamamlandı!**')
 
     else:
         # Klasik güncelleyici, oldukça basit.
@@ -129,7 +129,7 @@ async def updater(ups):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await update_requirements()
-        await ups.edit_text('💕 Güncelleme başarıyla tamamlandı!')
+        await ups.edit_text('**✅ | Güncelleme başarıyla tamamlandı!**')
         # Bot için Heroku üzerinde yeni bir instance oluşturalım.
         args = [sys.executable, "brighteninglotion.py"]
         execle(sys.executable, *args, environ)
