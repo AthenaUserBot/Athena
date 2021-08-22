@@ -1,3 +1,4 @@
+async_generator
 beautifulsoup4
 dnspython
 git+https://github.com/must4f/google-images-download.git
