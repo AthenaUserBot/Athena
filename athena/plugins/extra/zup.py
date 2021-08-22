@@ -6,7 +6,7 @@ def tg_userbotinstaller():
         ret_msg = message.document
         file_name = ret_msg.file_name
         if (len(file_name.split('.')) > 1) \
-            and plugin.file.name.split('.')[-1] == 'py':
+            and file_name.split('.')[-1] == 'py':
 
             if not os.path.exists("./athena/plugins/extra/" + file_name):
                 plugin = message.download()
