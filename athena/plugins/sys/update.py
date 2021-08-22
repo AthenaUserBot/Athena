@@ -102,7 +102,7 @@ async def updater(ups):
             )
             repo.__del__()
             return
-        await ups.edit_text('**Heroku üzerinde güncelleniyor..**'])
+        await ups.edit_text('**Heroku üzerinde güncelleniyor..**')
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
