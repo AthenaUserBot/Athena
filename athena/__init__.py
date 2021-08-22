@@ -14,7 +14,7 @@ WORKTIME = time()
 
 def disablelogs(): #thx to teamderuntergang
     pyrogram_main = getLogger('pyrogram')
-    pyrogram_main.setLevel(WARNING)
+    pyrogram_main.setLevel(ERROR)
     pyrogram_syncer = getLogger('pyrogram.syncer')
     pyrogram_syncer.setLevel(CRITICAL)
     pyrogram_syncer = getLogger('pyrogram.client')
