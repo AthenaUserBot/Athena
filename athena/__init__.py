@@ -77,6 +77,11 @@ API_HASH = environ.get("API_HASH", None)
 
 STRING = environ.get("STRING", None)
 
+HEROKUAPIKEY = environ.get("HEROKUAPIKEY", None)
+
+HEROKUAPP = environ.get("HEROKUAPP", None)
+
+
 plugins= dict(
     root="athena.plugins",
     exclude=["test","extra.zup"]            
