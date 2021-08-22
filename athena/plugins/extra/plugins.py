@@ -6,7 +6,7 @@ async def plist(_):
     await _.edit_text("Kontrol ediliyor...")
     yuklenen = f"💕 **Pluginler**\n\n"
     yuklenens = str(yuklenen)
-    for plugin in bot.search_messages("me", filter="document"):
+    async for plugin in bot.search_messages("me", filter="document"):
         try:
             dosyaismi = plugin.document.file_name.split(".")[1]
         except:
