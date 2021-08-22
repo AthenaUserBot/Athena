@@ -1,4 +1,4 @@
-from core import muinrobot
+from core.muin import muinrobot
 from athena import bot
 
 @muinrobot(pattern="^.plist")
