@@ -1,8 +1,11 @@
-async def ReplyOrE(message,text):
+async def eor(
+    _,
+    __
+):
     try:
-        return await message.edit_text(text)
+        return await _.edit_text(__)
     except:
-        return await message.reply_text(text)
+        return await _.reply_text(__)
 
 from athena import BOTLOG, bot
 
@@ -19,5 +22,3 @@ async def send_botlog(
             return None
     else:
         return None
-
-    
