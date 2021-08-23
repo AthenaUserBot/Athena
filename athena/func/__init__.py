@@ -11,6 +11,8 @@ async def to_be_sent(chat):
 async def it(text):
     return '<i>' + str(text) + '</i>'
 
+_admin_status_list = ['creator', 'administrator']
+
 async def bt(text):
     return '<i>' + str(text) + '</b>'
 
