@@ -84,7 +84,7 @@ HEROKUAPP = environ.get("HEROKUAPP", None)
 
 plugins= dict(
     root="athena.plugins",
-    exclude=["test","extra.zup"]            
+    exclude=["test"]            
 )
 
 if API_ID and API_HASH:
