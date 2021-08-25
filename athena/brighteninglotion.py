@@ -1,7 +1,7 @@
 from . import *
 from pyrogram import idle
 import chromedriver_autoinstaller
-from core.help import tg_userbotinstaller
+from core.help.plugin import tg_userbotinstaller
 
 try:
     bot.start()
