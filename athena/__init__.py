@@ -85,9 +85,11 @@ HEROKUAPP = environ.get("HEROKUAPP", None)
 
 
 plugins= dict(
-    root="athena.plugins",
-    exclude=["test"]            
+    root="plugins"
 )
+
+#    exclude=["test"]            
+
 
 if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
