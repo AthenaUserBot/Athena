@@ -7,3 +7,7 @@
 
 
 from athena.brighteninglotion import *
+
+sl(5) # Nefes alsın
+
+bot.run() # Başlıyor...
