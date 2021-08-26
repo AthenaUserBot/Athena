@@ -48,7 +48,10 @@ except:
 
 UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
 
-disablelogs() # bye 
+DEVELOPING = strtobool(environ.get("DEVELOPING", "False"))
+
+if not DEVELOPING:
+    disablelogs() # bye 
 
 def IIIIIIIIIIIIIIIIIIIIII():
     try:
