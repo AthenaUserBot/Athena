@@ -9,7 +9,7 @@ try:
         chromedriver_autoinstaller.install()
     except:
         pass
-    tg_userbotinstaller()
+#    tg_userbotinstaller()
     from core.err.ree import raa, rac, ccc
     for car in rac:
        ccc(bot,car)
