@@ -16,14 +16,15 @@ try:
     from core.err.ree import aaa
     aaa(bot)
 except Exception as e:
-    print("Bir hata oluştu...\n>>",str(e))
+    LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
-bot.set_parse_mode()
+
+LOGS.info('🔄 Son İşlemler')
 
 try:
-    print('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
+    LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
     bot.run()
 except Exception as e:
-    print('Bir hata oluştu: {}'.format(str(e)))
+    LOGS.error('Bir hata oluştu: {}'.format(str(e)))
 
 
