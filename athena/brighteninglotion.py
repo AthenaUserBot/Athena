@@ -9,22 +9,17 @@ try:
         chromedriver_autoinstaller.install()
     except:
         pass
-#    tg_userbotinstaller()
+    tg_userbotinstaller()
     from core.err.ree import raa, rac, ccc
     for car in rac:
        ccc(bot,car)
     from core.err.ree import aaa
-    aaa(bot)
+    bot.stop()
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
 
-LOGS.info('🔄 Son İşlemler')
-
-try:
-    LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
-    bot.run()
-except Exception as e:
-    LOGS.error('Bir hata oluştu: {}'.format(str(e)))
+LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
+bot.run()
 
 
