@@ -12,6 +12,19 @@ LOGGERVERBOSE = strtobool(environ.get("LOGGERVERBOSE", "False"))
 
 WORKTIME = time()
 
+if LOGGERVERBOSE:
+    basicConfig(
+        level=DEBUG,
+        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
+        datefmt='%d-%b-%y %H:%M:%S')
+else:
+    basicConfig(
+        level=INFO,
+        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
+        datefmt='%d-%b-%y %H:%M:%S')
+
+LOGS = getLogger(__name__)
+
 def disablelogs(): #thx to teamderuntergang
     pyrogram_main = getLogger('pyrogram')
     pyrogram_main.setLevel(ERROR)
@@ -36,17 +49,6 @@ except:
 UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
 
 disablelogs() # bye 
-
-if LOGGERVERBOSE:
-    basicConfig(
-        level=DEBUG,
-        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
-        datefmt='%d-%b-%y %H:%M:%S')
-else:
-    basicConfig(
-        level=INFO,
-        format="[%(asctime)s - %(levelname)s] - @AthenaUserbot : %(message)s",
-        datefmt='%d-%b-%y %H:%M:%S')
 
 def IIIIIIIIIIIIIIIIIIIIII():
     try:
