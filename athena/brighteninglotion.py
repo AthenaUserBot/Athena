@@ -20,6 +20,3 @@ except Exception as e:
 
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
-bot.run()
-
-
