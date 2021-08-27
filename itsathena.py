@@ -6,7 +6,7 @@
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
 
-from athena.brighteninglotion import *
+from athena.brighteninglotion import bot, sl
 
 sl(5) # Nefes alsın
 
