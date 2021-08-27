@@ -88,7 +88,7 @@ HEROKUAPP = environ.get("HEROKUAPP", None)
 
 
 plugins= dict(
-    root="athena/plugins"
+    root=".plugins"
 )
 
 #    exclude=["test"]            
