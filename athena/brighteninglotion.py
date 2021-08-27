@@ -5,6 +5,7 @@ from core.help.plugin import tg_userbotinstaller
 
 try:
     bot.start()
+    sl(5)
     try:
         chromedriver_autoinstaller.install()
     except:
@@ -14,7 +15,7 @@ try:
     for car in rac:
        ccc(bot,car)
     from core.err.ree import aaa
-    idle()
+    bot.stop()
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
