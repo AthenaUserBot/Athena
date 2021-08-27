@@ -93,6 +93,8 @@ plugins= dict(
 
 #    exclude=["test"]            
 
+if not os.path.isdir("downloads/"):
+    os.makedirs("downloads/")
 
 if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
