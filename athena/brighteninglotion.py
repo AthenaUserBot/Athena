@@ -14,7 +14,7 @@ try:
     for car in rac:
        ccc(bot,car)
     from core.err.ree import aaa
-    bot.stop()
+    idle()
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
