@@ -1,9 +1,9 @@
 from logging import CRITICAL, WARNING, ERROR, DEBUG, INFO, basicConfig, getLogger
+from os import environ, path, makedirs
 from core.err import NerdeBuBilgiAmk
 from distutils.util import strtobool
 from time import time, sleep as sl
 from typing import Any, Dict
-from os import environ, path
 from sqlite3 import connect
 from pyrogram import Client
 from requests import get
@@ -93,8 +93,8 @@ plugins= dict(
 
 #    exclude=["test"]            
 
-if not os.path.isdir("downloads/"):
-    os.makedirs("downloads/")
+if not path.isdir("downloads/"):
+    makedirs("downloads/")
 
 if API_ID and API_HASH:
     bot = Client(STRING if STRING else ':memory:',
