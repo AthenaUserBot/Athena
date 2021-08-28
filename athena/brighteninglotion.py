@@ -1,6 +1,9 @@
 from . import *
+import importlib
 from pyrogram import idle
 import chromedriver_autoinstaller
+from .plugins import ALL_MODULES as AM
+from importlib import import_module as im
 from core.help.plugin import tg_userbotinstaller
 
 try:
@@ -18,6 +21,10 @@ try:
     bot.stop()
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
+
+
+for i in AM:
+    imported_module = im("athena.plugins." + i)
 
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
