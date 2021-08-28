@@ -17,8 +17,6 @@ try:
     from core.err.ree import raa, rac, ccc
     for car in rac:
        ccc(bot,car)
-    from core.err.ree import aaa
-    bot.stop()
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
@@ -26,7 +24,6 @@ except Exception as e:
 for i in AM:
     imported_module = im("athena.plugins." + i)
 
-
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
 
-bot.run()
+idle()
