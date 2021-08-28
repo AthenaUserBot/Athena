@@ -105,8 +105,7 @@ if API_ID and API_HASH:
         app_version=str('| ' + ATHENAVER),
         hide_password=True,
         sleep_threshold=180,
-        lang_code='tr',
-        plugins=plugins
+        lang_code='tr'
 )
 else:
     acont = '✅' if API_ID is not None else '❌'
