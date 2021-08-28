@@ -11,8 +11,8 @@ def tg_userbotinstaller():
             continue
 
         if pymi == 'py':
-            if not os.path.exists("./athena/plugins/extra/" + file_name):
-                plugin = app.download_media(message,f"./athena/plugins/extra/{file_name}")
+            if not os.path.exists("./athena/plugins/" + file_name):
+                plugin = app.download_media(message,f"./athena/plugins/{file_name}")
                 print(f'{file_name} yüklendi!')
             else:
                 print(f'{file_name} atlandı!')
