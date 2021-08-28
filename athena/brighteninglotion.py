@@ -4,7 +4,6 @@ from pyrogram import idle
 import chromedriver_autoinstaller
 from .plugins import ALL_MODULES as AM
 from importlib import import_module as im
-from core.help.plugin import tg_userbotinstaller
 
 try:
     bot.start()
@@ -13,7 +12,21 @@ try:
         chromedriver_autoinstaller.install()
     except:
         pass
-    tg_userbotinstaller()
+    for message in bot.search_messages("me", filter="document"):
+        file_name = message.document.file_name
+
+        try:
+            pymi = file_name.split('.')[-1]
+        except:
+            continue
+
+        if pymi == 'py':
+            if not os.path.exists("./athena/plugins/" + file_name):
+                plugin = bot.download_media(message,f"./athena/plugins/{file_name}")
+                LOGS.info(f'{file_name} yüklendi!')
+            else:
+                LOGS.warning(f'{file_name} atlandı!')
+#                pass # Şimdilik
     from core.err.ree import raa, rac, ccc
     for car in rac:
        ccc(bot,car)
