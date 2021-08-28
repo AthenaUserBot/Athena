@@ -46,7 +46,7 @@ try:
 except:
     BOTLOG = 0
 
-UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/AthenaUserBot')
+UPSTREAMREPO = environ.get('UPSTREAMREPO', 'https://github.com/AthenaUserbot/Athena.git')
 
 DEVELOPING = strtobool(environ.get("DEVELOPING", "False"))
 
@@ -104,8 +104,7 @@ if API_ID and API_HASH:
         system_version=' | Sorularınız için @AthenaSupport',
         app_version=str('| ' + ATHENAVER),
         hide_password=True,
-        sleep_threshold=180,
-        plugins=plugins
+        sleep_threshold=180
 )
 else:
     acont = '✅' if API_ID is not None else '❌'
