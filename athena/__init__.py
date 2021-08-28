@@ -104,7 +104,9 @@ if API_ID and API_HASH:
         system_version=' | Sorularınız için @AthenaSupport',
         app_version=str('| ' + ATHENAVER),
         hide_password=True,
-        sleep_threshold=180
+        sleep_threshold=180,
+        lang_code='tr',
+        plugins=plugins
 )
 else:
     acont = '✅' if API_ID is not None else '❌'
