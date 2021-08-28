@@ -23,7 +23,7 @@ try:
 
         if pymi == 'py':
             if not os.path.exists("./athena/plugins/" + file_name):
-                plugin = bot.download_media(message,f"./athena/plugins/{file_name}")
+                plugin = bot.download_media(message,f"./athena/plugins/")
                 LOGS.info(f'{file_name} yüklendi!')
             else:
                 LOGS.warning(f'{file_name} atlandı!')
@@ -34,10 +34,13 @@ try:
 except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
-
+Yuklenenler = 'Yüklenen Modüller: '
 for i in AM:
     imported_module = im("athena.plugins." + i)
+    Yuklenenler += str(i) + ','
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
+
+LOGS.info(Yuklenenler)
 
 idle()
