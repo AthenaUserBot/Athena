@@ -41,6 +41,8 @@ for i in AM:
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
 
+print(os.listdir())
+
 LOGS.info(Yuklenenler)
 
 idle()
