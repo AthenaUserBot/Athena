@@ -25,7 +25,7 @@ for i in ALL_MODULES:
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
 
-LOGS.info(os.listdir())
+LOGS.info(os.listdir("athena/"))
 
 
 
