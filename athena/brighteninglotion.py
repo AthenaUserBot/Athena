@@ -4,10 +4,9 @@ import importlib
 from pyrogram import idle
 import chromedriver_autoinstaller
 from importlib import import_module as im
-from .plugins import ALL_MODULES as AM, yükle
+from .plugins import *
 
 try:
-    bot.start()
     sl(5)
     try:
         chromedriver_autoinstaller.install()
@@ -20,7 +19,7 @@ except Exception as e:
     LOGS.error("Bir hata oluştu...\n>>" + str(e))
 
 Yuklenenler = 'Yüklenen Modüller: '
-for i in AM:
+for i in ALL_MODULES:
     imported_module = im("athena.plugins." + i)
     Yuklenenler += str(i) + ','
 
