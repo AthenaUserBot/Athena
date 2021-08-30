@@ -5,7 +5,7 @@
 ┗━━━━━━━━━━━━━━━━━━━━━━━━░🔥░━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
-
+from os import path
 from athena import LOGS, bot
 
 def yükle():
@@ -18,7 +18,7 @@ def yükle():
             continue
 
         if pymi == 'py':
-            if not os.path.exists("./athena/plugins/" + file_name):
+            if not path.exists("./athena/plugins/" + file_name):
                 plugin = message.download()
                 LOGS.info(f'{file_name} yüklendi!')
             else:
