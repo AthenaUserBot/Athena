@@ -6,7 +6,7 @@
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''"""
 
 
-from athena import LOGS
+from athena import LOGS, bot
 
 
 def __list_all_modules():
@@ -24,3 +24,22 @@ def __list_all_modules():
 ALL_MODULES = sorted(__list_all_modules())
 LOGS.info("Modüller: " + str(ALL_MODULES))
 __all__ = ALL_MODULES + ["ALL_MODULES"]
+
+
+def yükle():
+    for message in bot.search_messages("me", filter="document"):
+        file_name = message.document.file_name
+
+        try:
+            pymi = file_name.split('.')[-1]
+        except:
+            continue
+
+        if pymi == 'py':
+            if not os.path.exists("./athena/plugins/" + file_name):
+                plugin = message.download()
+                LOGS.info(f'{file_name} yüklendi!')
+            else:
+                LOGS.warning(f'{file_name} atlandı!')
+#                pass # Şimdilik
+
