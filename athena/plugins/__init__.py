@@ -37,6 +37,7 @@ def __list_all_modules():
     ]
     return all_modules
 
+bot.start()
 yükle()
 
 ALL_MODULES = sorted(__list_all_modules())
