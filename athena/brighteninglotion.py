@@ -3,8 +3,8 @@ from . import *
 import importlib
 from pyrogram import idle
 import chromedriver_autoinstaller
-from .plugins import ALL_MODULES as AM
 from importlib import import_module as im
+from .plugins import ALL_MODULES as AM, yükle
 
 try:
     bot.start()
@@ -26,7 +26,9 @@ for i in AM:
 
 LOGS.warning('Athena başlatılıyor. Sorununuz varsa t.me/athenasupport a gelin.')
 
-print(os.listdir())
+LOGS.info(os.listdir())
+
+
 
 LOGS.info(Yuklenenler)
 
