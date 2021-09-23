@@ -1,12 +1,12 @@
 from athena import AFKMOD
 from athena.func import it, ct
-from core.muin import muinrobot
+from core.muin import athena
 from core.help import send_botlog
 
 TOTALMSSSSGS = 0
 AFK_ALLOWEDUSER = {}
 
-@muinrobot(pattern='^.afk')
+@athena(pattern='^.afk')
 async def afkmodon(message):
     global AFKMOD
     if AFKMOD:
@@ -22,7 +22,7 @@ async def afkmodon(message):
 from pyrogram import filters
 from athena import bot
 
-@muinrobot()
+@athena()
 async def _(_):
     global AFKMOD, TOTALMSSSSGS
     if AFKMOD:
