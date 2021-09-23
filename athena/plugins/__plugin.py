@@ -1,7 +1,7 @@
-from core.muin import muinrobot
+from core.muin import athena
 from athena import bot
 
-@muinrobot(pattern="^.plist")
+@athena(pattern="^.plist")
 async def plist(_):
     await _.edit_text("Kontrol ediliyor...")
     yuklenen = f"💕 **Pluginler**\n\n"
