@@ -8,7 +8,7 @@ from asyncio import sleep
 AdminNotFound = "**❌ Burada senden başka admin yok..**"
 MemberNotFound = "**❌ Burada senden başka üye yok..**"
 
-@muinrobot(outgoing=True, pattern="^.all")
+@athena(outgoing=True, pattern="^.all")
 async def alll(q):
     sebep = await extract_text(q)
 
@@ -34,7 +34,7 @@ async def alll(q):
     await app.send_message(chat,AllFinish)
 
 
-@muinrobot(outgoing=True, pattern="^.alladmin")
+@athena(outgoing=True, pattern="^.alladmin")
 async def alladmin(q):
     sebep = await extract_text(q)
     chat = q.chat.id
