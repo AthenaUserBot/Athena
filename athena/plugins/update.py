@@ -1,7 +1,7 @@
 from athena.func import extract_text
 
 from athena import UPSTREAMREPO, HEROKUAPIKEY, HEROKUAPP
-from core.muin import muinrobot
+from core.muin import athena
 from git import Repo  
 from os import remove, execle, path, environ
 import asyncio, sys
@@ -28,7 +28,7 @@ def update_requirements():
     except Exception as e:
         return repr(e)
 
-@muinrobot(pattern='^.update')
+@athena(pattern='^.update')
 async def updater(ups):
     conf = await extract_text(ups)
     off_repo = UPSTREAMREPO
