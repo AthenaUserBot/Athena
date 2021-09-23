@@ -19,7 +19,7 @@ from athena import TEMP, BOTLOG, PREFIXES, bot as app
 
 
 
-def muinrobot(**args):
+def athena(**args):
     pattern = args.get('pattern', None)
     command = args.get('command', None)
     outgoing = args.get('outgoing', True)
