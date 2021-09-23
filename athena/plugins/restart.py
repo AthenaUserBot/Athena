@@ -1,10 +1,10 @@
 from athena import BOT_NAME, bot
 from athena.func import to_be_sent
-from core.muin import muinrobot
+from core.muin import athena
 from os import execl
 import sys
 
-@muinrobot(pattern='^.restart')
+@athena(pattern='^.restart')
 async def restart(event):
     await event.edit_text(f'🔄 {BOT_NAME} yeniden başlatılıyor..')
     try:
