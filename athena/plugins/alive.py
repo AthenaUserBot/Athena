@@ -1,8 +1,8 @@
-from core.muin import muinrobot
+from core.muin import athena
 from athena import BOT_NAME
 
 
-@muinrobot(pattern='^.alive$')
+@athena(pattern='^.alive$')
 async def alive(message):
     await message.edit_text(f"""
 ❤️** < bu sana 🥺
