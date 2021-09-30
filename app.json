@@ -78,7 +78,7 @@
     },
     "BOTLOG": {
       "description": "Günlük grubunun ChatID'si. İstemiyorsanız '0' olarak ayarlayın.",
-      "value": "0"
+      "value": "True"
     },
     "LOGGERVERBOSE": {
       "description": "Konsol günlüğünde ayrıntıya ihtiyacınız varsa, bunu True olarak ayarlayın.",
